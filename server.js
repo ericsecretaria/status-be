@@ -41,3 +41,12 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+// .env  -- don't forget to npm install
+// MONGO_URL=mongodb+srv://ejsecretaria:qFHzAwTqPNejaif6@cluster0.82jzfru.mongodb.net/mern-blog?retryWrites=true&w=majority
+// JWT_KEY=anykey
+// GMAIL_PASS=lufhbswyhzmvcmro
+// GMAIL_USER=ejsecretariawork@gmail.com
+// CLOUDINARY_CLOUD_NAME=ddth7hxte
+// CLOUDINARY_APIKEY=665946565716959
+// CLOUDINARY_API_SECRET=g-OlpsYz-Q54-cHU_sRuXli6z_I

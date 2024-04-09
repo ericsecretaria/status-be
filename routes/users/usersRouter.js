@@ -48,7 +48,7 @@ usersRouter.put(
 // Public Profile
 usersRouter.get("/public-profile/:userId", getPublicProfile); //profile author of the post
 // Profile
-usersRouter.get("/profile", isLoggedIn, getProfile); //profile of the login user
+usersRouter.get("/user-profile", isLoggedIn, getProfile); //profile of the login user
 // Update Profile
 usersRouter.put("/update-profile", isLoggedIn, updateUserProfile);
 // Block User

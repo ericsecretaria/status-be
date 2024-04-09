@@ -73,7 +73,7 @@ exports.login = asyncHandler(async (req, res) => {
 });
 
 //? @desc Get Profile
-//? @route GET /api/v1/users/profile/
+//? @route GET /api/v1/users/user-profile
 //? @access  Private
 exports.getProfile = asyncHandler(async (req, res, next) => {
   // console.log(req.userAuth);
@@ -117,14 +117,9 @@ exports.getPublicProfile = asyncHandler(async (req, res, next) => {
   //! get user id from params
   //const id = req.params.id;
   const userId = req.params.userId;
-  const user = await User.findById(userId)
-    .select("-password")
-    .populate({
-      path: "posts",
-      populate: {
-        path: "category",
-      },
-    });
+  const user = await User.findById(userId).select("-password").populate({
+    path: "posts",
+  });
   res.json({
     status: "success",
     message: "Public Profile fetched",

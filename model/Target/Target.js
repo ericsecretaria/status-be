@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 
 // Schema
-const categorySchema = new mongoose.Schema(
+const targetSchema = new mongoose.Schema(
   {
-    name: {
+    renter: {
       type: String,
+      required: true,
+    },
+    rentAmount: {
+      type: Number,
       required: true,
     },
     author: {
@@ -12,29 +16,19 @@ const categorySchema = new mongoose.Schema(
       required: true,
       ref: "User",
     },
-    shares: {
-      type: Number,
-      default: 0,
-    },
-
-    posts: {
+    postId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Post",
+      required: true,
     },
   },
   {
     timestamps: true,
-    toJSON: {
-      virtuals: true,
-    },
-    toObject: {
-      virtuals: true,
-    },
   }
 );
 
 // Compile schema to model
 
-const Category = mongoose.model("Category", categorySchema);
+const Target = mongoose.model("Target", targetSchema);
 
-module.exports = Category;
+module.exports = Target;

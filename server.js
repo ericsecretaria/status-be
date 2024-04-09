@@ -9,9 +9,9 @@ const {
   notFound,
   globalErrHandler,
 } = require("./middlewares/globalErrorHandler");
-const categoryRouter = require("./routes/category/categoryRouter");
 const postRouter = require("./routes/post/postRouter");
 const commentRouter = require("./routes/comment/commentRouter");
+const targetRouter = require("./routes/target/targetRouter");
 const sendEmail = require("./utils/sendEmail");
 //sendEmail("ejsecretaria@gmail.com", "Some message");
 //! Server
@@ -25,9 +25,9 @@ app.use(express.json()); //pass incoming data
 app.use(cors());
 //= Routes
 app.use("/api/v1/users", usersRouter);
-app.use("/api/v1/categories", categoryRouter);
 app.use("/api/v1/posts", postRouter);
 app.use("/api/v1/comments", commentRouter);
+app.use("/api/v1/targets", targetRouter);
 
 //= Not Found middleware
 app.use(notFound);

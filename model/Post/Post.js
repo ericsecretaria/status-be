@@ -7,17 +7,33 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    released: {
+      type: String,
+      required: true,
+    },
     image: {
       type: String,
       required: true,
     },
-    claps: {
+    targetAmount: {
       type: Number,
       default: 0,
     },
-    content: {
+    trackMonth: {
       type: String,
       required: true,
+    },
+    currentTotal: {
+      type: Number,
+      default: 0,
+    },
+    behindTotal: {
+      type: Number,
+      default: 0,
+    },
+    claps: {
+      type: Number,
+      default: 0,
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
@@ -34,11 +50,7 @@ const postSchema = new mongoose.Schema(
         ref: "User",
       },
     ],
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "Category",
-    },
+
     scheduledPublished: {
       type: Date,
       default: null,
@@ -59,6 +71,12 @@ const postSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment",
+      },
+    ],
+    targets: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Target",
       },
     ],
   },

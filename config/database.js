@@ -11,5 +11,3 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
-//sCBj9iMNVPzfmGI5
-//mongodb+srv://ejsecretaria:sCBj9iMNVPzfmGI5@statustracker.lqgwlpo.mongodb.net/?retryWrites=true&w=majority&appName=statustracker
